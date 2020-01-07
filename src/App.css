@@ -1,38 +1,113 @@
-.App {
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+.bg-light {
+  background-color: rgb(15, 141, 36) !important;
+}
+
+.harvest-img {
+  height: 300px;
+  width: 1349px;
+}
+
+.wwa {
+  text-align: center;
+  color: green;
+}
+.para {
+  text-align: center;
+}
+.veges-img {
+  height: 160px;
+  width: 400px;
+}
+.chic-img {
+  height: 160px;
+  width: 400px;
+  margin-left: 70px;
+}
+.cab-img {
+  height: 160px;
+  width: 400px;
+  float: right;
+}
+.abt-page {
+  text-align: center;
+  color: green;
+}
+.cow-cow {
+  height: 390px;
+  width: 1366px;
+}
+.account {
+  text-align: center;
+  color: grey;
+}
+.card {
+  display: inline-block;
+}
+
+.form-group {
+  padding-top: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.btn {
+  background-color: green;
+  border: none;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: green;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  z-index: 99;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-title {
+  text-align: center;
+  padding-top: 60px;
+}
+.fam-req {
+  padding-top: 30px;
+}
+.flex-container {
+  padding-top: 30px;
+}
+/* .bys-req {
+  -webkit-flex-direction: row-reverse; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  flex-direction: row-reverse;
+} */
