@@ -20,11 +20,18 @@ class Dashboard extends React.Component {
         </div>
         <div
           className='card'
-          style={{ width: '18rem', height: '10rem', marginLeft: '200px' }}
+          style={{
+            width: '18rem',
+            height: '10rem',
+            marginLeft: '200px',
+            paddingTop: '20px'
+          }}
         >
           <div className='card-body'>
-            <MonIcon width='190px' height='80px' />
-            <h2 className='card-title'>Buyers</h2>
+            <MonIcon width='220px' height='80px' />
+            <h2 className='card-title' style={{ paddingBottom: '50px' }}>
+              Buyers
+            </h2>
           </div>
         </div>
         <div

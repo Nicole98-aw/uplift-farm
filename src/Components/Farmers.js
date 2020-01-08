@@ -5,6 +5,7 @@ class Farmers extends React.Component {
   render() {
     return (
       <div>
+        <h5>Create posts</h5>
         <Row form>
           <Col md={4}>
             <FormGroup>
@@ -42,6 +43,17 @@ class Farmers extends React.Component {
           </Col>
         </Row>
         <Button>Send post</Button>
+        <hr />
+        <h5>Send questions to farming experts</h5>
+        <Row form>
+          <Col md={4}>
+            <FormGroup>
+              <Label for='exampleEmail'>Question</Label>
+              <Input type='email' name='email' id='exampleEmail' />
+            </FormGroup>
+          </Col>
+        </Row>
+        <Button>Send</Button>
       </div>
     );
   }
