@@ -54,6 +54,64 @@ class Farmers extends React.Component {
           </Col>
         </Row>
         <Button>Send</Button>
+        <hr />
+        <h5>Recent posts from buyers</h5>
+        <div className='card'>
+          <div className='card-body'>
+            <form>
+              <div className='form-group'>
+                <label htmlFor=''>Product</label>
+                <input
+                  type='name'
+                  className='form-control'
+                  id='exampleInputEmail1'
+                  aria-describedby='emailHelp'
+                />
+              </div>
+              <div className='form-group'>
+                <label htmlFor=''>Quantity</label>
+                <input
+                  type='name'
+                  className='form-control'
+                  id='exampleInputEmail1'
+                  aria-describedby='emailHelp'
+                />
+              </div>
+              <div className='form-group'>
+                <label htmlFor=''>Brief descrition</label>
+                <input
+                  type='email'
+                  className='form-control'
+                  id='exampleInputPassword1'
+                />
+              </div>
+              <div className='form-group'>
+                <label htmlFor=''>Location</label>
+                <input
+                  type='password'
+                  className='form-control'
+                  id='exampleInputPassword1'
+                />
+              </div>
+              <div className='form-group'>
+                <label htmlFor=''>Name</label>
+                <input
+                  type='town'
+                  className='form-control'
+                  id='exampleInputPassword1'
+                />
+              </div>
+              <div className='form-group'>
+                <label htmlFor=''>Contact</label>
+                <input
+                  type='town'
+                  className='form-control'
+                  id='exampleInputPassword1'
+                />
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
