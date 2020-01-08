@@ -52,7 +52,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink className='nav-link' to='/farming experts'>
+                <NavLink className='nav-link' to='/farmexp'>
                   Farming experts
                 </NavLink>
               </li>
