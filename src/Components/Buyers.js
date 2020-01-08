@@ -55,36 +55,44 @@ class Buyers extends React.Component {
           <div className='card-body'>
             <form>
               <div className='form-group'>
+                <label htmlFor=''>Product</label>
                 <input
                   type='name'
                   className='form-control'
                   id='exampleInputEmail1'
                   aria-describedby='emailHelp'
-                  placeholder='Full Names'
                 />
               </div>
               <div className='form-group'>
+                <label htmlFor=''>Brief descrition</label>
                 <input
                   type='email'
                   className='form-control'
                   id='exampleInputPassword1'
-                  placeholder='Email'
                 />
               </div>
               <div className='form-group'>
+                <label htmlFor=''>Location</label>
                 <input
                   type='password'
                   className='form-control'
                   id='exampleInputPassword1'
-                  placeholder='Password'
                 />
               </div>
               <div className='form-group'>
+                <label htmlFor=''>Name</label>
                 <input
                   type='town'
                   className='form-control'
                   id='exampleInputPassword1'
-                  placeholder='Town'
+                />
+              </div>
+              <div className='form-group'>
+                <label htmlFor=''>Contact</label>
+                <input
+                  type='town'
+                  className='form-control'
+                  id='exampleInputPassword1'
                 />
               </div>
             </form>
