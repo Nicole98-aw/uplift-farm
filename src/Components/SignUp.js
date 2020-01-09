@@ -48,7 +48,7 @@ class SignUp extends React.Component {
                       placeholder='Town'
                     />
                   </div>
-                  <div>
+                  <div className='btncenter'>
                     <button type='submit' className='btn btn-primary'>
                       Sign Up
                     </button>

@@ -34,7 +34,7 @@ class Login extends React.Component {
                   placeholder='Password confirmation'
                 />
               </div>
-              <div className='btn'>
+              <div className='btn btncenter'>
                 <button type='submit' className='btn btn-primary'>
                   Login
                 </button>
