@@ -12,6 +12,7 @@ class Dashboard extends React.Component {
         <div
           className='card'
           style={{ width: '18rem', height: '10rem', marginLeft: '60px' }}
+          onClick={() => this.props.history.push('/farmers')}
         >
           <div className='card-body'>
             <FamIcon width='190px' height='100px' />
@@ -26,6 +27,7 @@ class Dashboard extends React.Component {
             marginLeft: '200px',
             paddingTop: '20px'
           }}
+          onClick={() => this.props.history.push('/buyers')}
         >
           <div className='card-body'>
             <MonIcon width='220px' height='80px' />
@@ -42,6 +44,7 @@ class Dashboard extends React.Component {
             float: 'right',
             marginRight: '50px'
           }}
+          onClick={() => this.props.history.push('/farmexp')}
         >
           <div className='card-body'>
             <ConIcon width='200px' height='50px' />
