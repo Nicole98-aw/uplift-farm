@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import history from '../util/history';
 
-function Login() {
+function Login(props) {
   const [inputs, setInputs] = useState();
   const handleChange = e => {
     const { name, value } = e.target;
@@ -10,8 +8,9 @@ function Login() {
   };
 
   const handleSubmit = async () => {
-    const loginResponse = await axios.post('/login', inputs);
-    console.log(loginResponse.data);
+    // const loginResponse = await axios.post('/login', inputs);
+    //console.log(loginResponse.data);
+    props.history.push('/dashboard');
     // const role = loginResponse.data.role;
     // localStorage.setItem('roles', JSON.stringify(role));
     // history.push('/app');
