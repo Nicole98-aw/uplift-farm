@@ -5,7 +5,7 @@
 
 .harvest-img {
   height: 300px;
-  width: 1349px;
+  width: 100%;
 }
 
 .wwa {
@@ -113,4 +113,28 @@
 } */
 .btncenter {
   margin-left: 46%;
+}
+.txt-area {
+  width: 400px;
+  height: 60px;
+}
+.f-card {
+  margin-left: 400px;
+  margin-top: 20px;
+}
+
+.f-btn {
+  margin-left: 20px;
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+.leftsignup {
+  left: 0;
+  background: url('https://images.pexels.com/photos/2255920/pexels-photo-2255920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+.leftlogin {
+  left: 0;
+  background: url('https://images.pexels.com/photos/1414642/pexels-photo-1414642.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+    no-repeat;
+  background-size: cover;
 }
