@@ -7,7 +7,11 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <img className='harvest-img' src={headerImg} alt='' />
+        <div className='row'>
+          <div className='row'>
+            <img className='harvest-img' src={headerImg} alt='' />
+          </div>
+        </div>
         <h2 className='wwa'>Who we are</h2>
         <p className='para'>
           Lorem Ipsum is simply dummy text of the printing and typesetting
