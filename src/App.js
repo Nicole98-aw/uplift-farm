@@ -1,34 +1,27 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './Components/Home';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import Dashboard from './Components/Dashboard';
-import SignUp from './Components/SignUp';
-import Login from './Components/Login';
-import Farmers from './Components/Farmers';
-import Buyers from './Components/Buyers';
-import FarmExp from './Components/FarmExp';
-import Navbar from './Components/Navbar';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import PublicRoutes from './routes/PublicRoutes';
+import PrivateRoutes from './routes/PrivateRoutes';
+import history from './util/history';
 
-class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Navbar />
+const authentication = () =>
+  JSON.parse(localStorage.getItem('roles')) ? (
+    <Redirect to='/app' />
+  ) : (
+    <PublicRoutes />
+  );
+
+const App = () => {
+  return (
+    <div>
+      <Router history={history}>
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/dashboard' component={Dashboard} />
-          <Route path='/signup' component={SignUp} />
-          <Route path='/login' component={Login} />
-          <Route path='/farmers' component={Farmers} />
-          <Route path='/buyers' component={Buyers} />
-          <Route path='/farmexp' component={FarmExp} />
+          <Route path='/app' component={PrivateRoutes} />
+          <Route path='' render={authentication} />
         </Switch>
-      </BrowserRouter>
-    );
-  }
-}
+      </Router>
+    </div>
+  );
+};
+
 export default App;
