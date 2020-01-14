@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function Login(props) {
   const [inputs, setInputs] = useState();
@@ -8,9 +9,9 @@ function Login(props) {
   };
 
   const handleSubmit = async () => {
-    // const loginResponse = await axios.post('/login', inputs);
-    //console.log(loginResponse.data);
-    props.history.push('/dashboard');
+    const loginResponse = await axios.post('/login', inputs);
+    console.log(loginResponse.data);
+    // props.history.push('/dashboard');
     // const role = loginResponse.data.role;
     // localStorage.setItem('roles', JSON.stringify(role));
     // history.push('/app');
