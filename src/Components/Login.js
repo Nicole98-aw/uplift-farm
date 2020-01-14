@@ -22,7 +22,7 @@ function Login(props) {
         <div className='center'></div>
       </div>
       <div className='split right'>
-        <div className='center'>
+        <div className='center' style={{ width: '40vw', marginTop: '20%' }}>
           <div className='form-group'>
             <input
               type='email'
