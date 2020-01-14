@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FormGroup, Label, Input } from 'reactstrap';
 
-function SignUp() {
+function SignUp(props) {
   const [inputs, setInputs] = useState();
   // const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -16,6 +16,7 @@ function SignUp() {
   const hanleSubmit = async () => {
     const signupResponse = await axios.post('/register', inputs);
     console.log(signupResponse.data);
+    // props.history.push('/dashboard');
   };
   console.log(inputs);
   return (
@@ -25,10 +26,7 @@ function SignUp() {
       </div>
       <div className='split right'>
         <div className='center'>
-          <div
-            className='card'
-            style={{ width: '40rem', height: '35rem', float: 'right' }}
-          >
+          <div style={{ width: '40vw', height: '35rem', float: 'right' }}>
             <div className='card-body'>
               <div className='form-group'>
                 <input
