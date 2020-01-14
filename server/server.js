@@ -5,8 +5,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const port = process.env.PORT || 4000;
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 mongoose
   .connect('mongodb://localhost:27017/uplift-farm', {
@@ -28,4 +30,5 @@ app.get('/*', (req, res) => {
 });
 
 app.use('/', require('./routers/users'));
+
 app.listen(port, () => console.log(`server running on port ${port}`));
