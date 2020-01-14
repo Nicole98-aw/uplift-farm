@@ -132,6 +132,15 @@
   left: 0;
   background: url('https://images.pexels.com/photos/2255920/pexels-photo-2255920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
+.leftloginsplit {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 20%;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 .leftlogin {
   left: 0;
   background: url('https://images.pexels.com/photos/1414642/pexels-photo-1414642.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
