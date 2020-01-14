@@ -4,9 +4,9 @@ import { FormGroup, Label, Input } from 'reactstrap';
 
 function SignUp() {
   const [inputs, setInputs] = useState();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
+  // const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -61,7 +61,7 @@ function SignUp() {
                   type='email'
                   name='email'
                   className='form-control'
-                  id='exampleInputPassword1'
+                  id='exampleInputEmail1'
                   placeholder='Email'
                   onChange={handleChange}
                 />
@@ -81,7 +81,7 @@ function SignUp() {
                   type='password'
                   name='password2'
                   className='form-control'
-                  id='exampleInputPassword1'
+                  id='exampleInputPassword2'
                   placeholder='confirm password'
                   onChange={handleChange}
                 />
