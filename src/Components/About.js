@@ -7,15 +7,7 @@ class About extends React.Component {
       <div>
         <h2 className='abt-page'>About Us</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum
+          Need to buy?Need to sell?We have got you covered because we are all about connection.Just like the name uplift farmers,we help you sell your produce by linking you up with potential customers who register with us as buyers.All you need to do is register with us and get the opportunity to showcase your products and sell them through the website to buyers from different parts of the country.In addition to this,you as a farmer also get the opportunity to talk to our Farming Experts who will be giving you advice on what to do and what not to do in order to produce quality and marketable products. 
         </p>
         <hr />
         <img className='cow-cow' src={cow} alt='' />
