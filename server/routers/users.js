@@ -1,102 +1,87 @@
 const express = require('express');
 const Users = require('../models/users');
-const router = express.Router();
-const bcrypt = require('bcryptjs');
+const router = new express.Router();
 
-const { welcome, refresh } = require('../jwt/handler');
+router.post('/users', async (req, res) => {
+  const users = new Users(req.body);
 
-// setting up jsonwebtoken
-const jwt = require('jsonwebtoken');
-
-const jwtSecretKey = 'my_secret_key';
-const jwtExpirySeconds = 300;
-
-// const users = {
-//   user1: 'password1',
-//   user2: 'password2'
-// };
-
-router.post('/register', (req, res) => {
-  const { fullNames, email, password, password2, role } = req.body;
-  if (!fullNames || !email || !password || !password2 || !role) {
-    res.send({ err: 'Please fill all fields!' });
-  } else if (password !== password2) {
-    res.send({ err: 'Passwords do not match!' });
-  } else if (password && password.length < 6) {
-    res.send({ err: 'Password should be at least 6 charcters!' });
-  } else {
-    Users.findOne({ email: email })
-      .then(user => {
-        if (user) {
-          res.send({ err: 'The email is already registered!' });
-        } else if (!user) {
-          const newUser = new Users({
-            fullNames,
-            email,
-            password,
-            role
-          });
-          bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(password, salt, (err, hash) => {
-              if (err) throw err;
-              newUser.password = hash;
-              newUser
-                .save()
-                .then(() => res.send('Registration successful!'))
-                .catch(err => console.error(err));
-            });
-          });
-        }
-      })
-      .catch(err => console.error(err.stack));
+  try {
+    await users.save();
+    res.status(201).send(users);
+  } catch (e) {
+    res.status(400).send(e);
   }
 });
-
-router.post('/login', (req, res) => {
-  const { email, password } = req.body;
-
-  // validate for emptiness in the req.body
-  if (!email && !password) {
-    // return 401 error is username or password doesn't exist, or if password does
-    // not match the password in our records
-    return res.status(401).end();
+router.get('/users', async (req, res) => {
+  try {
+    const users = await Users.find({});
+    res.send(users);
+  } catch (e) {
+    console.log(e);
+    res.status(500).send();
   }
-  // Match user
-  Users.findOne({
-    email: email
-  }).then(user => {
-    if (!user) {
-      res.send({ err: 'That email is not registered' });
+});
+router.get('/users/:id', async (req, res) => {
+  const _id = req.params.id;
+
+  try {
+    const users = await Users.findById(_id);
+    if (!users) {
+      return res.status(404).send();
     }
-    // Match password
-    bcrypt.compare(password, user.password, (err, isMatch) => {
-      if (err) throw err;
-      if (isMatch) {
-        // generate a token using the user email and user id
-        console.log(user);
-        const { email, _id } = user;
-        const token = jwt.sign({ email, _id }, jwtSecretKey, {
-          algorithm: 'HS256',
-          expiresIn: jwtExpirySeconds
-        });
-        console.log('token:', token);
-
-        // set the cookie as the token string, with a similar max age as the token
-        // here, the max age is in milliseconds, so we multiply by 1000
-        res
-          .cookie('token', token, { maxAge: jwtExpirySeconds * 1000 })
-          .send(token);
-        // res.end();
-      } else {
-        res.send({ err: 'Password incorrect' });
-      }
-    });
-  });
+    res.send(users);
+  } catch (e) {
+    res.status(500).send();
+  }
 });
 
-router.post(`/homepage`, welcome, refresh, (req, res) => {
-  console.log(req.payload);
-  res.send('Successfully visited our homepage');
+router.patch('/users/:id', async (req, res) => {
+  //patch is a http method that is used to update info in the database
+  const updates = Object.keys(req.body);
+  const allowedUpdates = [
+    'fullNames',
+    'email',
+    'role',
+    'password',
+    'password2'
+  ];
+  const isValidOperation = updates.every(update =>
+    allowedUpdates.includes(update)
+  );
+
+  if (!isValidOperation) {
+    return res.status(400).send({ error: 'Invalid updates ' });
+  }
+
+  try {
+    const users = await Users.findById(req.params.id);
+
+    updates.forEach(update => {
+      return (users[update] = req.body[update]);
+    });
+
+    await users.save();
+
+    if (!users) {
+      return res.status(404).send();
+    }
+    res.send(users);
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
+
+router.delete('/users/:id', async (req, res) => {
+  try {
+    const users = await Users.findByIdAndDelete(req.params.id);
+
+    if (!users) {
+      res.status(404).send();
+    }
+    res.send(users);
+  } catch (e) {
+    res.status(500).send(e);
+  }
 });
 
 module.exports = router;

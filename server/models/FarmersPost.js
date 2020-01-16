@@ -13,7 +13,12 @@ const farmersPostSchema = new Schema({
   contact: {
     type: Number,
     required: true
-  }
+  },
+  productName: {
+    type: String,
+    required: true
+  },
+  briefDescription: String
 });
 const farmersPost = mongoose.model('farmersPost', farmersPostSchema);
 

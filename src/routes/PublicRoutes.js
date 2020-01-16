@@ -11,7 +11,7 @@ import FarmExp from '../Components/FarmExp';
 import SignUp from '../Components/SignUp';
 import Login from '../Components/Login';
 
-const PublicRoutes = ({ match }) => (
+const PublicRoutes = props => (
   <div>
     <Navbar />
     <Switch>

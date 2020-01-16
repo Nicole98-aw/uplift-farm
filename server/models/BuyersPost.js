@@ -13,7 +13,14 @@ const buyersPostSchema = new Schema({
   contact: {
     type: Number,
     required: true
-  }
+  },
+  productName: {
+    type: String,
+    required: true
+  },
+  briefDescription: String,
+
+  quantity: String
 });
 const BuyersPost = mongoose.model('BuyersPost', buyersPostSchema);
 

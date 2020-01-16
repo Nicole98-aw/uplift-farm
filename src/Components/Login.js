@@ -18,21 +18,39 @@
 //   };
 
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import axios from 'axios';
 class Login extends React.Component {
-  state = {
-    login: false
-  };
-  setLogin = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      login: false,
+      email: '',
+      password: ''
+    };
+  }
+  setLogin = props => {
     this.setState({
       login: true
     });
+    const userData = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    axios.post('http://localhost:4000/login/', userData).then(res => {
+      // this.props.push('/dashboard');
+      if (res.status === 200) {
+        window.location.href = '/dashboard';
+      }
+      console.log(res.data);
+    });
+    console.log(props);
   };
-  renderLogin = () => {
-    if (this.state.login) {
-      return <Redirect to='/dashboard' />;
-    }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
   render() {
     return (
@@ -49,6 +67,7 @@ class Login extends React.Component {
                 className='form-control'
                 id='exampleInputPassword1'
                 placeholder='Email'
+                onChange={this.handleChange}
               />
             </div>
             <div className='form-group'>
@@ -58,10 +77,11 @@ class Login extends React.Component {
                 name='password'
                 id='exampleInputPassword1'
                 placeholder='Password'
+                onChange={this.handleChange}
               />
             </div>
             <div className='btn btncenter'>
-              {this.renderLogin()}
+              {/* {this.renderLogin()} */}
               <Button
                 color='success'
                 onClick={this.setLogin}

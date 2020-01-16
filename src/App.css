@@ -51,7 +51,7 @@
   padding-right: 15px;
 }
 .btn {
-  background-color: green;
+  color: green;
   border: none;
 }
 
@@ -113,13 +113,15 @@
 } */
 .btncenter {
   margin-left: 46%;
+  /* background-color: green; */
+  border: none;
 }
 .txt-area {
-  width: 400px;
-  height: 60px;
+  width: 600px;
+  height: 80px;
 }
 .f-card {
-  margin-left: 400px;
+  margin-left: 300px;
   margin-top: 20px;
 }
 
@@ -146,4 +148,28 @@
   background: url('https://images.pexels.com/photos/1414642/pexels-photo-1414642.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
     no-repeat;
   background-size: cover;
+}
+
+.fe-btn {
+  margin-left: 3rem;
+}
+
+.bp-page {
+  text-align: center;
+  text-decoration: underline;
+  color: green;
+}
+.bp {
+  margin-left: 20px;
+}
+.fp {
+  margin-left: 20px;
+}
+.fp-page {
+  text-align: center;
+  text-decoration: underline;
+  color: green;
+}
+.btn-btn {
+  margin-left: 20px;
 }
