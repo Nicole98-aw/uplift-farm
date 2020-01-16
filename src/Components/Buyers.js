@@ -5,99 +5,60 @@ class Buyers extends React.Component {
   render() {
     return (
       <div>
-        <h5>Create a request</h5>
+        <h5 className='bp'>Create your requests</h5>
+        <h5 className='bp-page'>Buyers page</h5>
         <Row form>
           <Col md={4}>
             <FormGroup>
-              <Label for='exampleEmail'>Product</Label>
-              <Input type='email' name='email' />
+              <Label for='exampleTown'>Product Name</Label>
+              <Input type='town' name='town' />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
               <Label for='examplePassword'>Quantity</Label>
-              <Input type='password' name='password' />
+              <Input type='email' name='password' />
             </FormGroup>
           </Col>
         </Row>
         <Row form>
           <Col md={4}>
             <FormGroup>
-              <Label for='exampleEmail'>Brief description</Label>
-              <Input type='email' name='email' id='exampleEmail' />
+              <Label for='exampleTown'>Brief description</Label>
+              <Input type='town' name='town' id='exampleTown' />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
               <Label for='examplePassword'>Location</Label>
-              <Input type='password' name='password' id='examplePassword' />
+              <Input type='town' name='password' id='examplePassword' />
             </FormGroup>
           </Col>
         </Row>
         <Row form>
           <Col md={4}>
             <FormGroup>
-              <Label for='exampleEmail'>Name</Label>
-              <Input type='email' name='email' id='exampleEmail' />
+              <Label for='exampleTown'>Name</Label>
+              <Input type='town' name='name' id='exampleName' />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
               <Label for='examplePassword'>Contact</Label>
-              <Input type='password' name='password' id='examplePassword' />
+              <Input type='town' name='password' id='examplePassword' />
             </FormGroup>
           </Col>
         </Row>
-        <Button>Send request</Button>
+        <Button
+          className='btn-btn'
+          color='success'
+          onClick={this.setSignUp}
+          style={{ color: 'white' }}
+        >
+          Send request
+        </Button>{' '}
         <hr />
         <h5>Recent posts from farmers</h5>
-        <div className='card'>
-          <div className='card-body'>
-            <form>
-              <div className='form-group'>
-                <label htmlFor=''>Product</label>
-                <input
-                  type='name'
-                  className='form-control'
-                  id='exampleInputEmail1'
-                  aria-describedby='emailHelp'
-                />
-              </div>
-              <div className='form-group'>
-                <label htmlFor=''>Brief descrition</label>
-                <input
-                  type='email'
-                  className='form-control'
-                  id='exampleInputPassword1'
-                />
-              </div>
-              <div className='form-group'>
-                <label htmlFor=''>Location</label>
-                <input
-                  type='password'
-                  className='form-control'
-                  id='exampleInputPassword1'
-                />
-              </div>
-              <div className='form-group'>
-                <label htmlFor=''>Name</label>
-                <input
-                  type='town'
-                  className='form-control'
-                  id='exampleInputPassword1'
-                />
-              </div>
-              <div className='form-group'>
-                <label htmlFor=''>Contact</label>
-                <input
-                  type='town'
-                  className='form-control'
-                  id='exampleInputPassword1'
-                />
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
     );
   }
