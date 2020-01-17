@@ -21,21 +21,41 @@ import { FormGroup, Label, Input } from 'reactstrap';
 //   console.log(inputs);
 
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import axios from 'axios';
 class SignUp extends React.Component {
   state = {
-    signup: false
+    signup: false,
+    fullNames: '',
+    role: '',
+    email: '',
+    password: '',
+    password2: ''
   };
-  setSignUp = () => {
+  setSignUp = props => {
     this.setState({
       signup: true
     });
+    const userData = {
+      fullNames: this.state.fullNames,
+      role: this.state.role,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+    axios.post('http://localhost:4000/signup/', userData).then(res => {
+      if (res.status === 200) {
+        window.location.href = '/dashboard';
+      }
+      console.log(res.data);
+    });
+    console.log(props);
   };
-  renderSignUp = () => {
-    if (this.state.signup) {
-      return <Redirect to='/dashboard' />;
-    }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
   render() {
     return (
@@ -55,6 +75,7 @@ class SignUp extends React.Component {
                     id='exampleInputEmail1'
                     aria-describedby='emailHelp'
                     placeholder='Full Names'
+                    onChange={this.handleChange}
                   />
                 </div>
                 <FormGroup>
@@ -72,6 +93,7 @@ class SignUp extends React.Component {
                     className='form-control'
                     id='exampleInputEmail1'
                     placeholder='Email'
+                    onChange={this.handleChange}
                   />
                 </div>
                 <div className='form-group'>
@@ -81,6 +103,7 @@ class SignUp extends React.Component {
                     className='form-control'
                     id='exampleInputPassword1'
                     placeholder='Password'
+                    onChange={this.handleChange}
                   />
                 </div>
                 <div className='form-group'>
@@ -90,10 +113,10 @@ class SignUp extends React.Component {
                     className='form-control'
                     id='exampleInputPassword2'
                     placeholder='confirm password'
+                    onChange={this.handleChange}
                   />
                 </div>
                 <div className='btncenter btn'>
-                  {this.renderSignUp()}
                   <Button
                     color='success'
                     onClick={this.setSignUp}

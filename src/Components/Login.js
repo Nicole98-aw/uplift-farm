@@ -38,7 +38,6 @@ class Login extends React.Component {
       password: this.state.password
     };
     axios.post('http://localhost:4000/login/', userData).then(res => {
-      // this.props.push('/dashboard');
       if (res.status === 200) {
         window.location.href = '/dashboard';
       }
@@ -81,7 +80,6 @@ class Login extends React.Component {
               />
             </div>
             <div className='btn btncenter'>
-              {/* {this.renderLogin()} */}
               <Button
                 color='success'
                 onClick={this.setLogin}
