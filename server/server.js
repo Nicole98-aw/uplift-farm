@@ -13,7 +13,8 @@ const port = process.env.PORT || 4000;
 
 const app = express();
 app.use(cors());
-
+// mongodb://localhost:27017/uplift-farm
+//mongodb+srv://nicole98:<password>@cluster0-z4h4l.mongodb.net/test?retryWrites=true&w=majority
 mongoose
   .connect('mongodb://localhost:27017/uplift-farm', {
     useNewUrlParser: true,
