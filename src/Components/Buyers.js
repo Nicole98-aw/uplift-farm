@@ -11,13 +11,13 @@ class Buyers extends React.Component {
           <Col md={4}>
             <FormGroup>
               <Label for='exampleTown'>Product Name</Label>
-              <Input type='town' name='town' />
+              <Input type='text' name='product name' />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
               <Label for='examplePassword'>Quantity</Label>
-              <Input type='email' name='password' />
+              <Input type='text' name='quantity' />
             </FormGroup>
           </Col>
         </Row>
@@ -25,13 +25,13 @@ class Buyers extends React.Component {
           <Col md={4}>
             <FormGroup>
               <Label for='exampleTown'>Brief description</Label>
-              <Input type='town' name='town' id='exampleTown' />
+              <Input type='text' name='description' />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
               <Label for='examplePassword'>Location</Label>
-              <Input type='town' name='password' id='examplePassword' />
+              <Input type='text' name='location' />
             </FormGroup>
           </Col>
         </Row>
@@ -39,13 +39,13 @@ class Buyers extends React.Component {
           <Col md={4}>
             <FormGroup>
               <Label for='exampleTown'>Name</Label>
-              <Input type='town' name='name' id='exampleName' />
+              <Input type='text' name='name' />
             </FormGroup>
           </Col>
           <Col md={4}>
             <FormGroup>
               <Label for='examplePassword'>Contact</Label>
-              <Input type='town' name='password' id='examplePassword' />
+              <Input type='text' name='contact'  />
             </FormGroup>
           </Col>
         </Row>
