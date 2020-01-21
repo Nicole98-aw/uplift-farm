@@ -116,6 +116,10 @@
   /* background-color: green; */
   border: none;
 }
+
+.link {
+  color: white;
+}
 .txt-area {
   width: 600px;
   height: 80px;
