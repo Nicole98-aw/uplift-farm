@@ -18,38 +18,20 @@
 //   };
 
 import React from 'react';
-import { Button } from 'reactstrap';
-import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      login: false,
-      email: '',
-      password: ''
-    };
-  }
-  setLogin = props => {
+  state = {
+    login: false
+  };
+  setLogin = () => {
     this.setState({
       login: true
     });
-    const userData = {
-      email: this.state.email,
-      password: this.state.password
-    };
-    axios.post('http://localhost:4000/login/', userData).then(res => {
-      if (res.status === 200) {
-        window.location.href = '/dashboard';
-      }
-      console.log(res.data);
-    });
-    console.log(props);
   };
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+  renderLogin = () => {
+    if (this.state.Login) {
+      return <Redirect to='/dashboard' />;
+    }
   };
   render() {
     return (
@@ -79,14 +61,18 @@ class Login extends React.Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div className='btn btncenter'>
-              <Button
-                color='success'
-                onClick={this.setLogin}
-                style={{ color: 'white' }}
+
+            <div className='col-md-12 text-center'>
+              <button
+                id='singlebutton'
+                name='singlebutton'
+                class='btn btn-success'
               >
-                Login
-              </Button>{' '}
+                {this.renderLogin()}
+                <a href='/dashboard' className='link'>
+                  Login
+                </a>
+              </button>
             </div>
           </div>
         </div>
@@ -94,5 +80,37 @@ class Login extends React.Component {
     );
   }
 }
-
 export default Login;
+
+// import axios from 'axios';
+// class Login extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       login: false,
+//       email: '',
+//       password: ''
+//     };
+//   }
+//   setLogin = props => {
+//     this.setState({
+//       login: true
+//     });
+//     const userData = {
+//       email: this.state.email,
+//       password: this.state.password
+//     };
+//     axios.post('http://localhost:4000/login/', userData).then(res => {
+//       if (res.status === 200) {
+//         window.location.href = '/dashboard';
+//       }
+//       console.log(res.data);
+//     });
+//     console.log(props);
+//   };
+
+//   handleChange = e => {
+//     this.setState({
+//       [e.target.name]: e.target.value
+//     });
+//   };
