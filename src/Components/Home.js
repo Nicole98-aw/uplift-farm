@@ -14,11 +14,12 @@ class Home extends React.Component {
         </div>
         <h2 className='wwa'>Who we are</h2>
         <p className='para'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
+          We are a platform focusing on uplifting farmers,as the name depicts.
+          1.By connecting them with buyers around the country.This to increase
+          market for them as they will be able to sell not only to the locals
+          around them but also to people outside their locality. 2.Connect them
+          with farming experts to assist them with challenges they might be
+          facing in regards to farming. We will be glad to have you join us.
         </p>
         <img className='veges-img' src={vegetables} alt='' />
         <img className='chic-img' src={chicken} alt='' />
