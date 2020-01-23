@@ -20,6 +20,7 @@ class Home extends React.Component {
           around them but also to people outside their locality. 2.Connect them
           with farming experts to assist them with challenges they might be
           facing in regards to farming. We will be glad to have you join us.
+
         </p>
         <img className='veges-img' src={vegetables} alt='' />
         <img className='chic-img' src={chicken} alt='' />
