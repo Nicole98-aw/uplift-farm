@@ -11,9 +11,12 @@
 .wwa {
   text-align: center;
   color: green;
+  font-style: oblique;
 }
 .para {
   text-align: center;
+  font-style: oblique;
+  font-weight: 600;
 }
 .veges-img {
   height: 160px;
@@ -32,6 +35,7 @@
 .abt-page {
   text-align: center;
   color: green;
+  font-style: oblique;
 }
 .cow-cow {
   height: 390px;
@@ -162,18 +166,138 @@
   text-align: center;
   text-decoration: underline;
   color: green;
+  font-style: oblique;
+  font-weight: 600;
+  font-size: 3rem;
 }
 .bp {
   margin-left: 20px;
+  font-style: oblique;
+  font-weight: 600;
+  font-size: 2rem;
 }
 .fp {
   margin-left: 20px;
+  font-style: oblique;
+  font-weight: 600;
+  font-size: 2rem;
 }
 .fp-page {
   text-align: center;
   text-decoration: underline;
   color: green;
+  font-style: oblique;
+  font-weight: 600;
+  font-size: 3rem;
 }
 .btn-btn {
   margin-left: 20px;
+}
+
+.dashboard-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin: 4rem;
+}
+@media (max-width: 750px) {
+  .dashboard-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+  .dashboard-card > div {
+    width: 80%;
+  }
+}
+
+.post-main {
+  display: grid;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.post-item {
+  width: 75vw;
+  background: rgb(241, 248, 241);
+  min-height: 200px;
+  border-radius: 8px;
+  margin: 2rem 0px;
+  font-weight: 600;
+}
+.post-item h2 {
+  border-bottom: 0.5px solid grey;
+  padding: 1rem;
+  color: limegreen;
+  text-align: center;
+  font-style: oblique;
+}
+
+.post-item > div {
+  margin: 1rem;
+}
+
+.f-posts {
+  text-align: center;
+  text-decoration: underline;
+  color: green;
+  font-style: oblique;
+  font-weight: 600;
+  font-size: 4rem;
+}
+.abt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.we-help {
+  font-style: oblique;
+  text-align: center;
+  color: green;
+}
+.fr-buy {
+  font-style: oblique;
+  font-weight: normal;
+  font-weight: 600;
+}
+.fr-b {
+  color: green;
+}
+.c-page {
+  font-style: oblique;
+  color: green;
+}
+.c-text {
+  font-style: oblique;
+  font-weight: 600;
+}
+.login {
+  text-align: center;
+  font-style: oblique;
+  font-weight: normal;
+  color: green;
+}
+.farmers {
+  font-weight: 600;
+  font-style: oblique;
+}
+.buyers {
+  font-weight: 600;
+  font-style: oblique;
+}
+.contact {
+  display: flex;
+  margin-top: 4rem;
+  font-style: oblique;
+  font-weight: 600;
+}
+
+.navbar-brand img {
+  width: 50%;
+}
+.form-group {
+  padding: 10px;
+}
+.card-body {
+  padding-top: 6.5rem;
 }

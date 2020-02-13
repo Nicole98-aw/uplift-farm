@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
+import axios from 'axios';
 
-const Farmers = () => {
-  const [productStore, setProductStore] = useState([]);
+const Farmers = props => {
 
   const [product, setProduct] = useState({
     productName: '',
-    description: '',
+    briefDescription: '',
     location: '',
     name: '',
     contact: ''
@@ -21,15 +21,17 @@ const Farmers = () => {
     });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
-    setProductStore([...productStore, { ...product }]);
-    console.log(productStore);
+    const addProduct = await axios.post('/farmerspost', product);
+    console.log(addProduct);
+    return props.history.push('/farmerspost');
   };
+  console.log(product)
 
   const { productName, description, location, name, contact } = product;
   return (
-    <div>
+    <div className='farmers'>
       <h5 className='fp'>Create posts</h5>
       <h5 className='fp-page'>Farmers page</h5>
       <Row form>
@@ -49,7 +51,7 @@ const Farmers = () => {
             <Label>Brief description</Label>
             <Input
               type='text'
-              name='description'
+              name='briefDescription'
               value={description}
               onChange={handleChange}
             />

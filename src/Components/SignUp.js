@@ -1,7 +1,6 @@
 // import React, { useState } from 'react';
 // import axios from 'axios';
 import { FormGroup, Label, Input } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
 
 // function SignUp(props) {
 //   const [inputs, setInputs] = useState();
@@ -50,7 +49,8 @@ function SignUp(props) {
       <div className='split right'>
         <div className='center'>
           <div style={{ width: '40vw', height: '35rem', float: 'right' }}>
-            <div className='card-body'>
+            
+            <div className='card-body sign-up'>
               <div className='form-group'>
                 <input
                   type='name'

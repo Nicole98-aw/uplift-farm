@@ -41,6 +41,9 @@ class Login extends React.Component {
         </div>
         <div className='split right'>
           <div className='center' style={{ width: '40vw', marginTop: '20%' }}>
+            <div>
+              <h2 className='login'>Login</h2>
+            </div>
             <div className='form-group'>
               <input
                 type='email'
@@ -66,7 +69,7 @@ class Login extends React.Component {
               <button
                 id='singlebutton'
                 name='singlebutton'
-                class='btn btn-success'
+                className='btn btn-success'
               >
                 {this.renderLogin()}
                 <a href='/dashboard' className='link'>

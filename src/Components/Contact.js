@@ -8,11 +8,17 @@ class Contact extends React.Component {
     return (
       <div>
         <img className='harvest-img' src={headerImg} alt='' />
-        <h5>Get in touch with us:</h5>
-        <EmailIcon width='90px' height='50px' />
-        <p>upliftfarmers@gmail.com</p>
-        <CallIcon width='90px' height='50px' />
-        <p>+254 92281921</p>
+        <h3 className='c-page'>Get in touch with us:</h3>
+        <p className='c-text'>
+          In case of any questions please contact us through our email or call
+          us:
+        </p>
+        <div className='contact'>
+          <EmailIcon width='90px' height='50px' />
+          <a href='/'>upliftfarmers@gmail.com</a>
+          <CallIcon width='90px' height='50px' />
+          <p>+254 792281921</p>
+        </div>
       </div>
     );
   }

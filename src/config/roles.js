@@ -19,6 +19,16 @@ const components = {
     component: 'farmexp',
     url: '/farmexp',
     module: 1
+  },
+  farmerspost: {
+    component: 'farmerspost',
+    url: '/farmerspost',
+    module: 1
+  },
+  buyerspost: {
+    component: 'buyerspost',
+    url: '/buyerspost',
+    module: 1
   }
 };
 
@@ -32,13 +42,13 @@ const modules = {
 };
 
 // component's access to roles.
-const { dashboard, farmers, buyers, farmexp } = components;
+const { dashboard, farmers, buyers, farmexp, farmerspost,buyerspost } = components;
 const rolesConfig = {
   farmers: {
-    routes: [farmers, dashboard, farmexp]
+    routes: [farmers, dashboard, farmexp, farmerspost, buyerspost]
   },
   buyers: {
-    routes: [buyers, dashboard]
+    routes: [buyers, dashboard, farmerspost, buyerspost]
   },
   farmexp: {
     routes: [farmers, dashboard, farmexp]

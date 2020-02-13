@@ -1,78 +1,105 @@
 import React, { useState } from 'react';
 import { Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
-function Buyers() {
-  const [inputs, setInputs] = useState();
-  const [response, setResponse] = useState();
+// function Buyers() {
+//   const [inputs, setInputs] = useState();
+//   const [response, setResponse] = useState();
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setInputs({ ...inputs, [name]: value });
-  }
+//   function handleChange(e) {
+//     const { name, value } = e.target;
+//     setInputs({ ...inputs, [name]: value });
+//   }
+//   console.log(inputs);
+//   async function postData() {
+//     const resData = await axios.post('/api/buyers', inputs);
+//     setResponse(resData.data);
+//   }
+//   console.log(response);
+const Buyers = props => {
+  const [inputs, setInputs] = useState({
+    productName: '',
+    quantity:'',
+    briefDescription: '',
+    location: '',
+    name: '',
+    contact: ''
+  });
+
+  const handleChange = event => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    setInputs({
+      ...inputs,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    const addProduct = await axios.post('/buyerspost', inputs);
+    console.log(addProduct);
+    return props.history.push('/buyerspost');
+  };
   console.log(inputs);
-  async function postData() {
-    const resData = await axios.post('/api/buyers', inputs);
-    setResponse(resData.data);
-  }
-  console.log(response);
+
+  const { productName, quantity, description, location, name, contact } = inputs;
+
   return (
-    <div>
+    <div className='buyers'>
       <h5 className='bp'>Create your requests</h5>
       <h5 className='bp-page'>Buyers page</h5>
       <Row form>
         <Col md={4}>
           <FormGroup>
-            <Label for='exampleTown'>Product Name</Label>
-            <Input onChange={handleChange} type='text' name='productName' />
+            <Label>Product Name</Label>
+            <Input onChange={handleChange} type='text' name='productName' value={productName} />
           </FormGroup>
         </Col>
         <Col md={4}>
           <FormGroup>
-            <Label for='examplePassword'>Quantity</Label>
-            <Input onChange={handleChange} type='text' name='quantity' />
-          </FormGroup>
-        </Col>
-      </Row>
-      <Row form>
-        <Col md={4}>
-          <FormGroup>
-            <Label for='exampleTown'>Brief description</Label>
-            <Input onChange={handleChange} type='text' name='description' />
-          </FormGroup>
-        </Col>
-        <Col md={4}>
-          <FormGroup>
-            <Label for='examplePassword'>Location</Label>
-            <Input onChange={handleChange} type='text' name='location' />
+            <Label>Quantity</Label>
+            <Input onChange={handleChange} type='text' name='quantity' value={quantity} />
           </FormGroup>
         </Col>
       </Row>
       <Row form>
         <Col md={4}>
           <FormGroup>
-            <Label for='exampleTown'>Name</Label>
-            <Input onChange={handleChange} type='text' name='name' />
+            <Label>Brief description</Label>
+            <Input onChange={handleChange} type='text' name='briefDescription' value={description} />
           </FormGroup>
         </Col>
         <Col md={4}>
           <FormGroup>
-            <Label for='examplePassword'>Contact</Label>
-            <Input onChange={handleChange} type='text' name='contact' />
+            <Label>Location</Label>
+            <Input onChange={handleChange} type='text' name='location' value={location} />
+          </FormGroup>
+        </Col>
+      </Row>
+      <Row form>
+        <Col md={4}>
+          <FormGroup>
+            <Label>Name</Label>
+            <Input onChange={handleChange} type='text' name='name' value={name} />
+          </FormGroup>
+        </Col>
+        <Col md={4}>
+          <FormGroup>
+            <Label>Contact</Label>
+            <Input onChange={handleChange} type='number' name='contact' value={contact} />
           </FormGroup>
         </Col>
       </Row>
       <Button
         className='btn-btn'
         color='success'
-        onClick={postData}
+        onClick={handleSubmit}
         style={{ color: 'white' }}
       >
         Send request
       </Button>{' '}
-      <hr />
-      <h5>Recent posts from farmers</h5>
     </div>
   );
-}
+};
 
 export default Buyers;

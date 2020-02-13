@@ -10,6 +10,10 @@ import Buyers from '../Components/Buyers';
 import FarmExp from '../Components/FarmExp';
 import SignUp from '../Components/SignUp';
 import Login from '../Components/Login';
+import Farmerspost from '../Components/FarmersPosts'
+import BuyersOrders from '../Components/BuyersPost';
+
+
 
 const PublicRoutes = props => (
   <div>
@@ -24,6 +28,8 @@ const PublicRoutes = props => (
       <Route path='/buyers' component={Buyers} />
       <Route path='/farmexp' component={FarmExp} />
       <Route path='/login' component={Login} />
+      <Route path='/farmerspost' component={Farmerspost} />
+      <Route path='/buyerspost' component={BuyersOrders} />
     </Switch>
   </div>
 );

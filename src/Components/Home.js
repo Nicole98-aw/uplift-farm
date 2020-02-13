@@ -14,12 +14,10 @@ class Home extends React.Component {
         </div>
         <h2 className='wwa'>Who we are</h2>
         <p className='para'>
-          We are a platform focusing on uplifting farmers,as the name depicts.
-          1.By connecting them with buyers around the country.This to increase
-          market for them as they will be able to sell not only to the locals
-          around them but also to people outside their locality. 2.Connect them
-          with farming experts to assist them with challenges they might be
-          facing in regards to farming. We will be glad to have you join us.
+          As the name depicts,we are a platform focusing on uplifting farmers
+          and the country as a whole.We uplift farmers by expanding markets for them.This by giving them an opportunity to advertise their products and therefore be able to sell them not only within their localities but also accross the country.
+          Buyers,especially those that would like to purchase in bulk,will be able to get products that are fresh from farms at an affordable price without being exploited.You get to pay for the equivalence of the quality of whatever product you purchase.No paying more for less.
+          Our farmers are also at an advantage of getting agricultural advice from our farming experts so that they may be aware of what to do and what not to do so as to improve quantity and quality.
 
         </p>
         <img className='veges-img' src={vegetables} alt='' />
@@ -31,3 +29,4 @@ class Home extends React.Component {
 }
 
 export default Home;
+
